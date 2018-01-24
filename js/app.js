@@ -58,6 +58,9 @@ element.textContent = '7pm ' + loc1.hourlySales[13] + ' cookies';
 element = document.getElementById('loc1saleh14');
 element.textContent = '8pm ' + loc1.hourlySales[14] + ' cookies';
 
+element = document.getElementById('loc1totalsales');
+element.textContent = 'Total: ' + loc1.salesForDay + ' cookies';
+
 //Global Functions Start Here
 function getRandomCustomerNum(min, max) {
   min = Math.ceil(min);

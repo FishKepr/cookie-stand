@@ -15,21 +15,21 @@ header {
     top: 0;
     background-color: rgb(240, 240, 240);
     /*opacity: 0.5;*/
-    height: 275px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 300px;
+    font-family: 'Vollkorn', serif;
     color: darkblue;
     font-size: 36px;
     text-align: center;
 }
 
-
 h1,h2 {
+    font-family: 'Vollkorn', serif;
     color: darkblue;
  }
 
-
 h3 {
     margin-top: 35px;
+    font-family: 'Vollkorn', serif;
     color: darkred;
  }
 
@@ -39,14 +39,16 @@ h3 {
 
 p {
    margin-top: 10px;
-   font-family: Arial, Helvetica, sans-serif;
+   font-family: 'Montserrat', sans-serif;
    color:  darkgreen;
 }
+
 ul {
     margin-top: 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: darkgreen;
  }
+ 
 .left-menu,
 .main-content,
 .right-pane {

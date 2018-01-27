@@ -2,14 +2,14 @@
 
 var hours = ['6am', '7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
-var loc1 = {
-  name: '1st and Pike',
-  minCust: 23,
-  maxCust: 65,
-  avgSale: 6.3,
-  hourlySales: [],
-  salesForDay: 0,
-  loadHourlySales: function() {
+function Location (name, minCust, maxCust,avgSale) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgSale = avgSale;
+  this.hourlySales = [];
+  this.salesForDay = 0;
+  this.loadHourlySales = function() {
     //this.hourlySales = genHourlySales(this.minCust,this.maxCust,this.avgSale);
     for (var i=0; i<hours.length; i++) {
       var custPerHour = getRandomCustomerNum(this.minCust,this.maxCust);
@@ -17,30 +17,34 @@ var loc1 = {
       this.salesForDay+=this.hourlySales[i];
       console.log('Cust per hour: ' + custPerHour);
     }
-  },
-  render: function(){
+  };
+  this.render = function(){
   //Load Location Variables to HTML
   
   //Load Location Name
     var loc1Name = document.getElementById('loc1Name');
 
     //Load Location Detail Line
-    var loc1Detail = document.getElementById('loc1Detail');
-    var h3El = document.createElement('h3');
-    h3El.textContent = this.name;
-    loc1Name.appendChild(h3El);
+
+    var thEl = document.createElement('th');
+    thEl.textContent = this.name;
+    loc1Name.appendChild(thEl);
+    var loc1Data = document.getElementById('loc1Data');    
     for (var i=0; i<hours.length; i++){
-      var liEl = document.createElement('li');
-      liEl.textContent = hours[i] + ': ' + this.hourlySales[i] + ' cookies';
+      var tdEl = document.createElement('td');
+      tdEl.textContent = this.hourlySales[i];
       console.log('Detail Loop: '+i);
-      loc1Detail.appendChild(liEl);
+      loc1Data.appendChild(tdEl);
     }
     // Load Total Sales for Location
     var loc1Sale01 = document.getElementById('loc1TotalSales');
-    loc1Sale01.textContent = 'Total: ' + loc1.salesForDay + ' cookies';
+    loc1Sale01.textContent = this.salesForDay;
     
-  }
-};
+  };
+}
+
+
+
 
 var loc2 = {
   name: 'SeaTac Airport',
@@ -205,44 +209,26 @@ var loc5 = {
 
 //********   Mainline ********
 
-//Populate Location Data
-loc1.loadHourlySales();
-loc1.render();
-console.log('Hourly Sales: '+loc1.hourlySales);
-console.log('Sales for Day: '+loc1.salesForDay);
+//Create Table Header
+for (var i=0; i<hours.length; i++) {
+  var locHour = document.getElementById('locHour');
+  var thEl = document.createElement('th');
+  thEl.textContent = hours[i];
+  console.log('Column Header: '+thEl.textContent);
+  locHour.appendChild(thEl);
+}
+//Create locations and Populate Location Data
 
-loc2.loadHourlySales();
-loc2.render();
-console.log('Hourly Sales: '+loc2.hourlySales);
-console.log('Sales for Day: '+loc2.salesForDay);
+var fandp = new Location("First and Pike", 23, 65, 6.3);
+var seatac = new Location("SeaTac Airport", 3, 24, 1.2);
 
-loc3.loadHourlySales();
-loc3.render();
-console.log('Hourly Sales: '+loc3.hourlySales);
-console.log('Sales for Day: '+loc3.salesForDay);
 
-loc4.loadHourlySales();
-loc4.render();
-console.log('Hourly Sales: '+loc4.hourlySales);
-console.log('Sales for Day: '+loc4.salesForDay);
+fandp.loadHourlySales();
+fandp.render();
+console.log('Hourly Sales: '+fandp.hourlySales);
+console.log('Sales for Day: '+fandp.salesForDay);
 
-loc5.loadHourlySales();
-loc5.render();
-console.log('Hourly Sales: '+loc5.hourlySales);
-console.log('Sales for Day: '+loc5.salesForDay);
 
-// function genHourlySales(minCust, maxCust, avgSale) {
-//   console.log('Loading Hourly Sales');
-//   console.log(minCust+' '+maxCust+' '+avgSale);
-//   for (var i=0; i<13; i++) {
-//     var hourlySales = [];
-//     var custPerHour = getRandomCustomerNum(minCust,maxCust);
-//     hourlySales.push(Math.floor(custPerHour*avgSale));
-//     console.log('Cust per hour: ' + custPerHour);
-//   }
-//   console.log(hourlySales);
-//   return hourlySales;
-// }
 
 function getRandomCustomerNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 

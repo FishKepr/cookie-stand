@@ -72,6 +72,11 @@ for (var i=0; i<hours.length; i++) {
   console.log('Column Header: '+thEl.textContent);
   salesTable.appendChild(thEl);
 }
+
+thEl = document.createElement('th');
+thEl.textContent = 'Total';
+salesTable.appendChild(thEl);
+
 //Create locations and Populate Location Data
 
 var fandp = new Location("First and Pike", 23, 65, 6.3);

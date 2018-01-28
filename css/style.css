@@ -49,6 +49,10 @@ ul {
     color: darkgreen;
  }
  
+ table {
+     font-size: 24px;
+ }
+
 .left-menu,
 .main-content,
 .right-pane {

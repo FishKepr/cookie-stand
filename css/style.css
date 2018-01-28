@@ -5,16 +5,13 @@
 div {
     border: 1px solid;
     background-color: darkgrey;
-    /*text-align: center;*/
     font-size: 30px;
 }
 
 header {
-    /*position: fixed;*/
     width: 99%;
     top: 0;
     background-color: rgb(240, 240, 240);
-    /*opacity: 0.5;*/
     height: 300px;
     font-family: 'Vollkorn', serif;
     color: darkblue;
@@ -53,23 +50,15 @@ ul {
      font-size: 24px;
  }
 
-.left-menu,
-.main-content,
-.right-pane {
-    /*height: 100px;*/
-}
-
 .main-content-home{
     float: left;
-    /*margin-top: 200px;*/
     width: 50%;
     background-color: rgb(168, 220, 168);
 }
 
 .main-content {
     float: left;
-    /*margin-top: 200px;*/
-    width: 75%;
+    width: 79%;
     background-color: rgb(168, 220, 168);
 }
 
@@ -84,12 +73,10 @@ ul {
 
 .right-pane {
     float: left;
-    background-color: pink;
+    background-color: lightcoral;
     width: 29%;
 }
 
 img.large {
-    /*float: left;*/
     width: 125px;
-    /*height: 50px;*/
 }

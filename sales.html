@@ -24,10 +24,28 @@
             </ul>
     </div>
     <div class="main-content">
-    <h1>Sales by Location</h1>
-        <table id="salesTable" border="2">
-        </table>
 
+        <h1>Sales by Location</h1>
+           <table id="salesTable" border="2">
+           </table>
+        <form id="new-location">
+            <fieldset>
+                <legend>Add a location</legend>
+                <label for="locName">New Location</label>
+                <input name="locName" type="text"/>
+
+                <label for="minCust">Minimum Customers</label>
+                <input name="minCust" type="text"/>
+                <br>
+                <label for="maxCust">Maximum Customers</label>
+                <input name="maxCust" type="text"/>
+
+                <label for="avgSale">Avg Sale per Cust.</label>
+                <input name="avgSale" type="text"/>
+                <br>
+                <button id="add-loc-button" type="submit">Add New Location</button>
+            </fieldset>
+        </form>
 
     </div>
 <script src="js/sales.js"></script>

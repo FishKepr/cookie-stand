@@ -31,7 +31,7 @@ function LocationObject (name, minCust, maxCust,avgSale) {
   this.render = function(){
   //Call function to add location row to table
     appendLine(this.name, this.hourlySales,this.salesForDay);
-    
+
   };
   //Call function to create and load hourly sales
   this.loadHourlySales();
@@ -117,7 +117,7 @@ function handleNewLocation(event) {
 
   //Verify that we have valid values, Exit if error
   if (!locName || !minCust || !maxCust || !avgSale) {
-    return alert('Fields cannot be empty!');
+    return alert('Must enter a value in each field!');
   }
 
   var salesTable = document.getElementById('salesTable');
@@ -158,7 +158,6 @@ thEl.textContent = 'Total';
 salesTable.appendChild(thEl);
 
 //Create pre-assigned locations
-
 var fandp = new LocationObject("First and Pike", 23, 65, 6.3);
 var seatac = new LocationObject("SeaTac Airport", 3, 24, 1.2);
 var seattleCenter = new LocationObject("Seattle Center", 11, 38, 3.7);

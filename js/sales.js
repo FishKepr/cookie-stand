@@ -5,6 +5,7 @@ var hours = ['6am', '7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4p
 var hourlyTotal = [];
 var totalForDay = 0;
 
+//Function to create location object
 function LocationObject (name, minCust, maxCust,avgSale) {
   this.name = name;
   this.minCust = minCust;
@@ -81,7 +82,6 @@ function createFooter(){
   salesTable.appendChild(tfEl);
 
   var tableFooter = document.getElementById('tableFooter');
-
   var trEl = document.createElement('tr');
   tableFooter.appendChild(trEl);
 
@@ -94,7 +94,6 @@ function createFooter(){
   for (var i=0; i<hours.length; i++) {
     var tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal[i];
-
     tableFooter.appendChild(tdEl);
   }
 
@@ -106,7 +105,7 @@ function createFooter(){
 
 // This function handles the Addition of a new location
 function handleNewLocation(event) {
-  console.log(event);
+  //console.log(event);
   event.preventDefault(); //prevents page reload
 
   //Retrieve values from form
@@ -116,17 +115,21 @@ function handleNewLocation(event) {
   var avgSale = parseFloat(event.target.avgSale.value);
 
   //Verify that we have valid values, Exit if error
-  if (!locName || !minCust || !maxCust || !avgSale) {
-    return alert('Must enter a value in each field!');
+  //if (!locName || !minCust || !maxCust || !avgSale) {
+  //  return alert('Must enter a value in each field!');
+  //}
+  if (minCust > maxCust) {
+    return alert('Minimum Customers must be less than or equal to Maximum.');
   }
 
+  //Retrieve Table and Footer elements
   var salesTable = document.getElementById('salesTable');
   var tableFooter = document.getElementById('tableFooter');
 
   //Remove the old footer row
   salesTable.removeChild(tableFooter);
 
-  //Create new Location Object
+  //Create and append new Location Object
   new LocationObject(locName,minCust, maxCust, avgSale);
 
   //Rebuild new Table Footer
@@ -146,10 +149,10 @@ var salesTable = document.getElementById('salesTable');
 var thEl = document.createElement('th');
 salesTable.appendChild(thEl);
 
+//Append Hours Array
 for (var i=0; i<hours.length; i++) {
   thEl = document.createElement('th');
   thEl.textContent = hours[i];
-
   salesTable.appendChild(thEl);
 }
 

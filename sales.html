@@ -32,16 +32,16 @@
             <fieldset>
                 <legend>Add a location</legend>
                 <label for="locName">New Location</label>
-                <input name="locName" type="text"/>
-
-                <label for="minCust">Minimum Customers</label>
-                <input name="minCust" type="text"/>
+                <input name="locName" type="text" required/>
                 <br>
-                <label for="maxCust">Maximum Customers</label>
-                <input name="maxCust" type="text"/>
-
+                <label for="minCust">Minimum Cust.</label>
+                <input name="minCust" type="number" required min="1"/>
+                
+                <label for="maxCust">Maximum Cust.</label>
+                <input name="maxCust" type="number" required min="1"/>
+                <br>
                 <label for="avgSale">Avg Sale per Cust.</label>
-                <input name="avgSale" type="text"/>
+                <input name="avgSale" type="number" required min="1" step="0.1"/>
                 <br>
                 <button id="add-loc-button" type="submit">Add New Location</button>
             </fieldset>

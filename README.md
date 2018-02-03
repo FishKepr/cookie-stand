@@ -7,7 +7,7 @@
 <li>Moved field edits to HTML5 layer.</li>
 <li>Added relationship edit between min/max customers.</li>
 <li>Consolidated redundant code into functions</li>
-<li>consolidated the starting of the different table rows by passing parent and content parameters.</li>
+<li>consolidated the starting of the different table rows by passing parent and content parameters into a function.</li>
 <li>Adjusted height of Sales Table DIV per suggestion from TA.</li>
 </ul>
 

@@ -29,14 +29,15 @@ function LocationObject (name, minCust, maxCust,avgSale) {
     }
 
   };
-  this.render = function(){
+  //this.render = function(){
   //Call function to add location row to table
-    appendLine(this.name, this.hourlySales,this.salesForDay);
+  //  appendLine(this.name, this.hourlySales,this.salesForDay);
 
-  };
+  //};
   //Call function to create and load hourly sales
   this.loadHourlySales();
-  this.render();
+  //this.render();
+  appendLine(this.name, this.hourlySales,this.salesForDay);
 }
 
 //Common Functions
@@ -77,20 +78,24 @@ function getRandomCustomerNum(min, max) {
 //Creates Table Footer
 function createFooter(){
   //Insert Table Footer row as child of Sales Table
+  //Give it an attribute ID so we can delete it when adding a new location
   var tfEl = document.createElement('tfoot');
   tfEl.setAttribute('id', 'tableFooter');
   salesTable.appendChild(tfEl);
 
+  //Associate the other row elements to tableFooter so we can delete the entire row when adding a new location
+
+  //Insert Table row element as child of Table Footer
   var tableFooter = document.getElementById('tableFooter');
   var trEl = document.createElement('tr');
   tableFooter.appendChild(trEl);
 
-  //Insert table row header as child to footer
+  //Insert table row header as child of Table Footer
   thEl = document.createElement('th');
   thEl.textContent = 'Total for Hour';
   tableFooter.appendChild(thEl);
 
-  //Insert hourly totals for location as child to footer
+  //Insert hourly totals for location as of Table Footer
   for (var i=0; i<hours.length; i++) {
     var tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal[i];
@@ -103,9 +108,8 @@ function createFooter(){
   tableFooter.appendChild(thEl);
 }
 
-// This function handles the Addition of a new location
+// This function handles the addition of a new location
 function handleNewLocation(event) {
-  //console.log(event);
   event.preventDefault(); //prevents page reload
 
   //Retrieve values from form
@@ -115,6 +119,7 @@ function handleNewLocation(event) {
   var avgSale = parseFloat(event.target.avgSale.value);
 
   //Verify that we have valid values, Exit if error
+  //Required field validation now handled by HTML5
   //if (!locName || !minCust || !maxCust || !avgSale) {
   //  return alert('Must enter a value in each field!');
   //}

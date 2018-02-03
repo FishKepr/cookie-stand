@@ -1,7 +1,6 @@
 'use strict';
 
 var hours = ['6am', '7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
-
 var hourlyTotal = [];
 var totalForDay = 0;
 
@@ -115,7 +114,7 @@ function handleNewLocation(event) {
   var salesTable = document.getElementById('salesTable');
   var tableFooter = document.getElementById('tableFooter');
 
-  //Remove the old footer row
+  //Remove the existing footer row
   salesTable.removeChild(tableFooter);
 
   //Create and append new Location Object
@@ -131,7 +130,7 @@ function handleNewLocation(event) {
   event.target.avgSale.value = null;
 }
 
-//This function starts a new table row and appends it to the parent parameter.
+//This function starts a new table row and appends the first two elements to the parent parameter.
 function startNewTableRow(parent,headerContent) {
   //Need both Table Row AND Table Header for each detail line
   var trEl = document.createElement('tr');

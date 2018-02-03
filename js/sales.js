@@ -61,7 +61,7 @@ function appendLine(name, hourlySales,salesForDay){
 
 //Generates Random Number of Customers
 function getRandomCustomerNum(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
 
 //Creates Table Footer
@@ -161,11 +161,11 @@ thEl.textContent = 'Total';
 salesTable.appendChild(thEl);
 
 //Create pre-assigned locations
-var fandp = new LocationObject("First and Pike", 23, 65, 6.3);
-var seatac = new LocationObject("SeaTac Airport", 3, 24, 1.2);
-var seattleCenter = new LocationObject("Seattle Center", 11, 38, 3.7);
-var capitolHill = new LocationObject("Capitol Hill", 20, 38, 2.3);
-var alki = new LocationObject("Alki", 2, 16, 4.6);
+var fandp = new LocationObject('First and Pike', 23, 65, 6.3);
+var seatac = new LocationObject('SeaTac Airport', 3, 24, 1.2);
+var seattleCenter = new LocationObject('Seattle Center', 11, 38, 3.7);
+var capitolHill = new LocationObject('Capitol Hill', 20, 38, 2.3);
+var alki = new LocationObject('Alki', 2, 16, 4.6);
 
 //Create Table Footer
 createFooter();

@@ -78,14 +78,14 @@ function createFooter(){
   var tableFooter = document.getElementById('tableFooter');
   startNewTableRow(tableFooter,'Total for Hour');
 
-  //Insert hourly totals for location as of Table Footer
+  //Insert totals for each hour as child of Table Footer
   for (var i=0; i<hours.length; i++) {
     var tdEl = document.createElement('td');
     tdEl.textContent = hourlyTotal[i];
     tableFooter.appendChild(tdEl);
   }
 
-  //Insert Total for day for the location as child to footer
+  //Insert Total for Day as child of Table Footer
   thEl = document.createElement('th');
   thEl.textContent = totalForDay;
   tableFooter.appendChild(thEl);
@@ -136,7 +136,7 @@ function startNewTableRow(parent,headerContent) {
   var trEl = document.createElement('tr');
   parent.appendChild(trEl);
 
-  //Insert table row header as child of Table Footer
+  //Insert table row header as child
   var thEl = document.createElement('th');
   thEl.textContent = headerContent;
   parent.appendChild(thEl);

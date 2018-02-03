@@ -29,14 +29,9 @@ function LocationObject (name, minCust, maxCust,avgSale) {
     }
 
   };
-  //this.render = function(){
-  //Call function to add location row to table
-  //  appendLine(this.name, this.hourlySales,this.salesForDay);
-
-  //};
-  //Call function to create and load hourly sales
+  //Call method to create and load hourly sales
   this.loadHourlySales();
-  //this.render();
+  //Call function to Build and append table row
   appendLine(this.name, this.hourlySales,this.salesForDay);
 }
 
@@ -44,23 +39,18 @@ function LocationObject (name, minCust, maxCust,avgSale) {
 
 //Loads Detail line to table
 function appendLine(name, hourlySales,salesForDay){
-  //Load Location Variables to HTML
 
   //Load Location Name
   var salesTable = document.getElementById('salesTable');
 
   //Append Location Detail Line to table
   //Need both Table Row AND Table Header for each detail line
-  var trEl = document.createElement('tr');
-  salesTable.appendChild(trEl);
-
-  var thEl = document.createElement('th');
-  thEl.textContent = name;
-  salesTable.appendChild(thEl);
+  startNewTableRow(salesTable,name);
 
   //Loop Through and append Hours per Location
+  var tdEl;
   for (var i=0; i<hours.length; i++){
-    var tdEl = document.createElement('td');
+    tdEl = document.createElement('td');
     tdEl.textContent = hourlySales[i];
     salesTable.appendChild(tdEl);
   }
@@ -87,13 +77,7 @@ function createFooter(){
 
   //Insert Table row element as child of Table Footer
   var tableFooter = document.getElementById('tableFooter');
-  var trEl = document.createElement('tr');
-  tableFooter.appendChild(trEl);
-
-  //Insert table row header as child of Table Footer
-  thEl = document.createElement('th');
-  thEl.textContent = 'Total for Hour';
-  tableFooter.appendChild(thEl);
+  startNewTableRow(tableFooter,'Total for Hour');
 
   //Insert hourly totals for location as of Table Footer
   for (var i=0; i<hours.length; i++) {
@@ -147,12 +131,24 @@ function handleNewLocation(event) {
   event.target.avgSale.value = null;
 }
 
+//This function starts a new table row and appends it to the parent parameter.
+function startNewTableRow(parent,headerContent) {
+  //Need both Table Row AND Table Header for each detail line
+  var trEl = document.createElement('tr');
+  parent.appendChild(trEl);
+
+  //Insert table row header as child of Table Footer
+  var thEl = document.createElement('th');
+  thEl.textContent = headerContent;
+  parent.appendChild(thEl);
+}
+
 //********   Mainline Starts Here   ********
 
 //Create Table Header
 var salesTable = document.getElementById('salesTable');
-var thEl = document.createElement('th');
-salesTable.appendChild(thEl);
+var thEl;
+startNewTableRow(salesTable,'');
 
 //Append Hours Array
 for (var i=0; i<hours.length; i++) {
@@ -179,4 +175,3 @@ createFooter();
 // Event listener for comment submission form
 var newLocation = document.getElementById('new-location');
 newLocation.addEventListener('submit', handleNewLocation);
-

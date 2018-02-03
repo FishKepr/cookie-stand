@@ -80,3 +80,8 @@ ul {
 img.large {
     width: 125px;
 }
+ 
+#salesTablePane {
+    height: 800px;
+    background-color: rgb(168, 220, 168);
+}

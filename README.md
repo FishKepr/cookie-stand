@@ -1,11 +1,14 @@
 # cookie-stand
-<h1>Salmon Cookies Lab Project (Lab 7)</h1>
+<h1>Salmon Cookies Lab Project (Lab 8)</h1>
 <ul>
-<li>Created External facing pages for Home, Locations, and Nutrition Facts.</li>
-<li>Created External facing page that incudes sales per location.</li>
-<li>Utilized JS to generate and populate (using append instructions) sales per location</li>
-<li>Utilized Reusable Object and Constructors</li>
-<li>Converted Sales List to table</li>
+<li>Added footer to Sales Table</li>
+<li>Added form to add new location</li>
+<li>Added listener and handler to add new location</li>
+<li>Moved field edits to HTML5 layer.</li>
+<li>Added relationship edit between min/max customers.</li>
+<li>Consolidated redundant code into functions</li>
+<li>consolidated the starting of the different table rows by passing parent and content parameters into a function.</li>
+<li>Adjusted height of Sales Table DIV per suggestion from TA.</li>
 </ul>
 
 

@@ -8,27 +8,45 @@
 </head>
 <body>
     <header>
-            <img src="images/salmon.png" class="large" alt="Salmon">
-            <img src="images/plus.png" class="large" alt="Plus Sign">
-            <img src="images/cookie.png" class="large" alt="Cookie">
-            <img src="images/qmark.png" class="large" alt="Question Mark">
-            <h1>Yes! Really!</h1>
+        <img src="images/salmon.png" class="large" alt="Salmon">
+        <img src="images/plus.png" class="large" alt="Plus Sign">
+        <img src="images/cookie.png" class="large" alt="Cookie">
+        <img src="images/qmark.png" class="large" alt="Question Mark">
+        <h1>Yes! Really!</h1>
     </header>
     <div class="left-menu">
-            <h2>Content</h2>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="outlets.html">Authorized Retail Outlets</a></li>
-                <li><a href="sales.html">Sales</a></li> 
-                <li><a href="nutrition.html">Nutrition Facts</a></li>
-            </ul>
+        <h2>Content</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="outlets.html">Authorized Retail Outlets</a></li>
+            <li><a href="sales.html">Sales</a></li> 
+            <li><a href="nutrition.html">Nutrition Facts</a></li>
+        </ul>
     </div>
     <div class="main-content">
-    <h1>Sales by Location</h1>
-        <table id="salesTable" border="2">
-        </table>
-
-
+        <div id="salesTablePane">
+        <h1>Sales by Location</h1>
+           <table id="salesTable" border="2">
+           </table>
+        <form id="new-location">
+            <fieldset>
+                <legend>Add a location</legend>
+                <label for="locName">New Location</label>
+                <input name="locName" type="text" required/>
+                <br>
+                <label for="minCust">Minimum Cust.</label>
+                <input name="minCust" type="number" required min="1"/>
+                
+                <label for="maxCust">Maximum Cust.</label>
+                <input name="maxCust" type="number" required min="1"/>
+                <br>
+                <label for="avgSale">Avg Sale per Cust.</label>
+                <input name="avgSale" type="number" required min="1" step="0.1"/>
+                <br>
+                <button id="add-loc-button" type="submit">Add New Location</button>
+            </fieldset>
+        </form>
+        </div>
     </div>
 <script src="js/sales.js"></script>
 </body>

@@ -85,3 +85,13 @@ img.large {
     height: 800px;
     background-color: rgb(168, 220, 168);
 }
+
+.item-frame {
+
+    height: 425px;
+}
+
+.merchPic {
+    float: left;
+    padding: 1px 1px 1px 1px;
+}

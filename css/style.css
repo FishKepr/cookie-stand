@@ -25,7 +25,7 @@ h1,h2 {
  }
 
 h3 {
-    margin-top: 35px;
+    margin-top: 10px;
     font-family: 'Vollkorn', serif;
     color: darkred;
  }
@@ -67,21 +67,41 @@ ul {
     background-color: lightblue;
     text-align: left;
     width: 20%;
-    height: 730px;
+    height: 1300px;
 
 }
 
 .right-pane {
     float: left;
-    background-color: lightcoral;
+    background-color: rgb(247, 210, 210);
     width: 29%;
 }
 
 img.large {
     width: 125px;
 }
- 
+img.familyimage {
+    width: 600px;
+}
+
 #salesTablePane {
     height: 800px;
     background-color: rgb(168, 220, 168);
+}
+
+.item-frame {
+    background-color: rgb(168, 220, 168);
+    height: 425px;
+}
+.sub-section {
+    background-color: rgb(168, 220, 168);
+
+}
+.merchPic {
+    float: left;
+    padding: 1px 1px 1px 1px;
+}
+.floatpicsmall {
+    float: left;
+    width: 100px;
 }

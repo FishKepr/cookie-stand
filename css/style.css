@@ -80,17 +80,23 @@ ul {
 img.large {
     width: 125px;
 }
- 
+img.familyimage {
+    width: 600px;
+}
+
 #salesTablePane {
     height: 800px;
     background-color: rgb(168, 220, 168);
 }
 
 .item-frame {
-
+    background-color: rgb(168, 220, 168);
     height: 425px;
 }
+.sub-section {
+    background-color: rgb(168, 220, 168);
 
+}
 .merchPic {
     float: left;
     padding: 1px 1px 1px 1px;
